@@ -6,6 +6,10 @@ import AuthPage from 'pages/AuthPage';
 import React from 'react';
 import componentQueries from 'react-component-queries';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import GamelanDataPage from './pages/GamelanDataPage';
+import KidungDataPage from './pages/KidungDataPage';
+import MantramDataPage from './pages/MantramDataPage';
+import TabuhDataPage from './pages/TabuhDataPage';
 import './styles/reduction.scss';
 
 const AlertPage = React.lazy(() => import('pages/AlertPage'));
@@ -24,6 +28,14 @@ const ProgressPage = React.lazy(() => import('pages/ProgressPage'));
 const TablePage = React.lazy(() => import('pages/TablePage'));
 const TypographyPage = React.lazy(() => import('pages/TypographyPage'));
 const WidgetPage = React.lazy(() => import('pages/WidgetPage'));
+const ManusaYadnya = React.lazy(() => import('pages/yadnya/ManusaYadnya'));
+const DewaYadnya = React.lazy(() => import('pages/yadnya/DewaYadnya'));
+const PitraYadnya = React.lazy(() => import('pages/yadnya/PitraYadnya'));
+const RsiYadnya = React.lazy(() => import('pages/yadnya/RsiYadnya'));
+const BhutaYadnya = React.lazy(() => import('pages/yadnya/BhutaYadnya'));
+const TariDataPage = React.lazy(() => import('pages/TariDataPage'));
+const ProsesiPage = React.lazy(() => import('pages/ProsesiPage'));
+const AdminPage = React.lazy(() => import('pages/AdminPage'));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
@@ -74,6 +86,18 @@ class App extends React.Component {
                 <Route exact path="/forms" component={FormPage} />
                 <Route exact path="/input-groups" component={InputGroupPage} />
                 <Route exact path="/charts" component={ChartPage} />
+                <Route exact path="/manusa-yadnya" component={ManusaYadnya} />
+                <Route exact path="/dewa-yadnya" component={DewaYadnya} />
+                <Route exact path="/pitra-yadnya" component={PitraYadnya} />
+                <Route exact path="/rsi-yadnya" component={RsiYadnya} />
+                <Route exact path="/bhuta-yadnya" component={BhutaYadnya} />
+                <Route exact path="/prosesi-page" component={ProsesiPage} />
+                <Route exact path="/tari-page" component={TariDataPage} />
+                <Route exact path="/kidung-page" component={KidungDataPage} />
+                <Route exact path="/mantram-page" component={MantramDataPage} />
+                <Route exact path="/tabuh-page" component={TabuhDataPage} />
+                <Route exact path="/gamelan-page" component={GamelanDataPage} />
+                <Route exact path="/admin-page" component={AdminPage} />
               </React.Suspense>
             </MainLayout>
             <Redirect to="/" />
