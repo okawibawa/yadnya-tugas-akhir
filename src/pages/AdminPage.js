@@ -1,6 +1,17 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap';
 import Page from '../components/Page';
+import SearchInput from '../components/SearchInput';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Row,
+  Table,
+  Button,
+} from 'reactstrap';
+import { MdDeleteForever, MdEdit, MdAddCircleOutline } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const AdminPage = () => {
   return (
@@ -8,7 +19,80 @@ const AdminPage = () => {
       <Page title="Admin" breadcrumbs={[{ name: 'admin', active: true }]}>
         <Row>
           <Col>
-            <h1>Hallo dari halaman admin!</h1>
+            {/* TODO: 
+            - add tables for data
+            - complete layout
+            - integrate with database, MySql
+            - CRUD functions  */}
+            <Row>
+              <Col>
+                <Card className="mb-3">
+                  <CardHeader className="d-flex align-items-center justify-content-between">
+                    <Button
+                      color="success"
+                      className="d-flex align-items-center"
+                    >
+                      <MdAddCircleOutline size={22} className="mr-2" />
+                      Tambah Data
+                    </Button>
+
+                    <SearchInput />
+                  </CardHeader>
+                  <CardBody>
+                    <Table responsive>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Nama Admin</th>
+                          <th>Email</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Oka Wirawan</td>
+                          <td>me@gmail.com</td>
+                          <td>
+                            <Button
+                              color="primary"
+                              size="sm"
+                              className="mr-3 align-items-center"
+                            >
+                              <MdEdit size={16} className="mr-2" />
+                              Edit
+                            </Button>
+                            <Button color="danger" size="sm">
+                              <MdDeleteForever size={16} className="mr-2" />
+                              hapus
+                            </Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Oka Wibawa</td>
+                          <td>info@cakeplabs.com</td>
+                          <td>
+                            <Button
+                              color="primary"
+                              size="sm"
+                              className="mr-3 align-items-center"
+                            >
+                              <MdEdit size={16} className="mr-2" />
+                              Edit
+                            </Button>
+                            <Button color="danger" size="sm">
+                              <MdDeleteForever size={16} className="mr-2" />
+                              hapus
+                            </Button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Page>

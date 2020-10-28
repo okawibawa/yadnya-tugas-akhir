@@ -1,6 +1,5 @@
 import Avatar from 'components/Avatar';
 import { UserCard } from 'components/Card';
-import SearchInput from 'components/SearchInput';
 import React from 'react';
 import { MdClearAll, MdExitToApp, MdPersonPin } from 'react-icons/md';
 import {
@@ -57,9 +56,6 @@ class Header extends React.Component {
             <MdClearAll size={25} />
           </Button>
         </Nav>
-        <Nav navbar>
-          <SearchInput />
-        </Nav>
 
         <Nav navbar className={bem.e('nav-right')}>
           <NavItem className="d-inline-flex"></NavItem>
@@ -82,10 +78,6 @@ class Header extends React.Component {
               <PopoverBody className="p-0 border-light">
                 <UserCard title="Oka Wibawa" className="border-light">
                   <ListGroup flush>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdPersonPin /> Profile
-                    </ListGroupItem>
-
                     <ListGroupItem tag="button" action className="border-light">
                       <MdExitToApp /> Logout
                     </ListGroupItem>

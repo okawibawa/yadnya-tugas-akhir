@@ -9,7 +9,7 @@ const NumberWidget = ({ title, number, color, ...restProps }) => {
     <Card body {...restProps}>
       <div className="d-flex flex-column justify-content-between">
         <CardText tag="div" className="mb-4">
-          <Typography className="mb-0" style={{ fontSize: '1.4rem' }}>
+          <Typography className="mb-0" style={{ fontSize: '1.2rem' }}>
             <strong>{title}</strong>
           </Typography>
         </CardText>

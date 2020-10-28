@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { MdDeleteForever, MdEdit, MdAddCircleOutline } from 'react-icons/md';
+import SearchInput from '../../components/SearchInput';
 
 const ManusaYadnya = () => {
   return (
@@ -21,15 +22,16 @@ const ManusaYadnya = () => {
     >
       <Row>
         <Col className="mb-3">
-          <h1>Hallo dari halaman Manusa Yadnya! Apa kabar?</h1>
           <Row>
             <Col>
               <Card className="mb-3">
-                <CardHeader>
+                <CardHeader className="d-flex align-items-center justify-content-between">
                   <Button color="success" className="d-flex align-items-center">
                     <MdAddCircleOutline size={22} className="mr-2" />
                     Tambah Data
                   </Button>
+
+                  <SearchInput />
                 </CardHeader>
                 <CardBody>
                   <Table responsive>

@@ -12,7 +12,6 @@ import {
   MdSurroundSound,
   MdSpa,
   MdPeople,
-  MdDeleteForever,
 } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import {
@@ -34,6 +33,14 @@ const navAdmin = [
 
 const navProsesi = [
   { to: '/prosesi-page', name: 'prosesi', exact: true, Icon: MdSubject },
+];
+
+const navNewNode = [
+  { to: '/add-new-node', name: 'add new node', exact: true, Icon: MdSubject },
+];
+
+const navLogout = [
+  { to: '/logout', name: 'logout', exact: true, Icon: MdSubject },
 ];
 
 const pageContents = [
@@ -111,7 +118,7 @@ class Sidebar extends React.Component {
                 <NavItem key={index} className={bem.e('nav-item')}>
                   <BSNavLink
                     id={`navItem-${name}-${index}`}
-                    className="text-uppercase"
+                    className="text-capitalize"
                     tag={NavLink}
                     to={to}
                     activeClassName="active"
@@ -150,7 +157,7 @@ class Sidebar extends React.Component {
                   <NavItem key={index} className={bem.e('nav-item')}>
                     <BSNavLink
                       id={`navItem-${name}-${index}`}
-                      className="text-uppercase"
+                      className="text-capitalize"
                       tag={NavLink}
                       to={to}
                       activeClassName="active"
@@ -167,7 +174,7 @@ class Sidebar extends React.Component {
                 <NavItem key={index} className={bem.e('nav-item')}>
                   <BSNavLink
                     id={`navItem-${name}-${index}`}
-                    className="text-uppercase"
+                    className="text-capitalize"
                     tag={NavLink}
                     to={to}
                     activeClassName="active"
@@ -183,7 +190,7 @@ class Sidebar extends React.Component {
                 <NavItem key={index} className={bem.e('nav-item')}>
                   <BSNavLink
                     id={`navItem-${name}-${index}`}
-                    className="text-uppercase"
+                    className="text-capitalize"
                     tag={NavLink}
                     to={to}
                     activeClassName="active"
@@ -195,11 +202,11 @@ class Sidebar extends React.Component {
                 </NavItem>
               ))}
 
-              {navAdmin.map(({ to, name, exact, Icon }, index) => (
+              {navNewNode.map(({ to, name, exact, Icon }, index) => (
                 <NavItem key={index} className={bem.e('nav-item')}>
                   <BSNavLink
                     id={`navItem-${name}-${index}`}
-                    className="text-uppercase"
+                    className="text-capitalize"
                     tag={NavLink}
                     to={to}
                     activeClassName="active"
@@ -211,12 +218,13 @@ class Sidebar extends React.Component {
                 </NavItem>
               ))}
             </div>
+
             <div className="second-group">
-              {/* {navLogout.map(({ to, name, exact, Icon }, index) => (
+              {navAdmin.map(({ to, name, exact, Icon }, index) => (
                 <NavItem key={index} className={bem.e('nav-item')}>
                   <BSNavLink
                     id={`navItem-${name}-${index}`}
-                    className="text-uppercase"
+                    className="text-capitalize"
                     tag={NavLink}
                     to={to}
                     activeClassName="active"
@@ -226,7 +234,22 @@ class Sidebar extends React.Component {
                     <span className="">{name}</span>
                   </BSNavLink>
                 </NavItem>
-              ))} */}
+              ))}
+              {navLogout.map(({ to, name, exact, Icon }, index) => (
+                <NavItem key={index} className={bem.e('nav-item')}>
+                  <BSNavLink
+                    id={`navItem-${name}-${index}`}
+                    className="text-capitalize"
+                    tag={NavLink}
+                    to={to}
+                    activeClassName="active"
+                    exact={exact}
+                  >
+                    <Icon className={bem.e('nav-item-icon')} />
+                    <span className="">{name}</span>
+                  </BSNavLink>
+                </NavItem>
+              ))}
             </div>
           </Nav>
         </div>

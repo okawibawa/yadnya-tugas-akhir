@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from '../../components/Page';
+import SearchInput from '../../components/SearchInput';
 import {
   Card,
   CardBody,
@@ -20,15 +21,16 @@ const BhutaYadnya = () => {
     >
       <Row>
         <Col className="mb-3">
-          <h1>Hallo dari halaman Bhuta Yadnya! Apa kabar?</h1>
           <Row>
             <Col>
               <Card className="mb-3">
-                <CardHeader>
+                <CardHeader className="d-flex align-items-center justify-content-between">
                   <Button color="success" className="d-flex align-items-center">
                     <MdAddCircleOutline size={22} className="mr-2" />
                     Tambah Data
                   </Button>
+
+                  <SearchInput />
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
